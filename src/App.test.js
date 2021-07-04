@@ -12,3 +12,15 @@ test('find world in the document', () => {
   const linkElement = screen.getByText(/world/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+test('fail test in the document', () => {
+  const failtotest = render(<App />);
+  const Owntext = failtotest.getByText(/check own test write/i);
+  expect(Owntext).toBeInTheDocument();
+});
+
+test('find input with placeholder', () => {
+  const ResponseText = render(<App />)
+  const placeHolder = ResponseText.getByPlaceholderText(/Please/i);
+  expect(placeHolder).toBeInTheDocument();
+})
